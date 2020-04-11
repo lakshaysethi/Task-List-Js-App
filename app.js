@@ -14,7 +14,7 @@ form.addEventListener('submit', addTask);
 }
 
 function addTask(e) {
-    if (taskInput.value == '') {
+    if (taskInput.value === '') {
         alert('Add a task');
     }
 }
@@ -24,4 +24,12 @@ const li = document.createElement('li');
 //Add class
 li.className = 'collection-item';
 //Create text node and append to li
-li.appendChild(document.createTextNode(task))
+li.appendChild(document.createTextNode(taskInput.value));
+//create a new link element
+const link = document.createElement('a');
+//Add class
+link.className = 'delete-item secondary-content';
+//Add Icon
+link.innerHTML = '<i class="fa fa-remove"></i>';
+//Append link to li
+li.appendChild(link);
